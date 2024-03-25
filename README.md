@@ -23,6 +23,7 @@ then run the following commands in a separate terminal to initialize the server:
 
 ```
 cd server
+pip freeze > requirements.txt
 source venv/bin/activate
 python run.py
 ```
