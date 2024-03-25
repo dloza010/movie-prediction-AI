@@ -4,17 +4,13 @@ from flask_cors import CORS
 
 
 def create_app():
-    # Create the Flask app instance
     app = Flask(__name__)
     app.config.from_object(Config)
+    CORS(app)
 
-    # Initialize CORS
-    CORS(app)  # Optionally, you can configure CORS settings here
-
-    # Set up CORS headers using the after_request decorator
     @app.after_request
     def add_cors_headers(response):
-        response.headers['Access-Control-Allow-Origin'] = 'http://localhost:8081'  # Adjust the origin as needed
+        response.headers['Access-Control-Allow-Origin'] = 'http://localhost:8082'  # Adjust the origin as needed
         response.headers['Access-Control-Allow-Methods'] = 'GET, POST, PUT, DELETE, OPTIONS'  # Add allowed methods
         response.headers['Access-Control-Allow-Headers'] = 'Content-Type, Authorization'  # Add allowed headers
         return response
