@@ -14,4 +14,3 @@ def get_movies():
     response = requests.get(tmdb_url)
     return jsonify(response.json()['results'])
 
-
