@@ -2,6 +2,7 @@
 node_modules
 /dist
 server/config.py
+server/venv
 
 # local env files
 .env
