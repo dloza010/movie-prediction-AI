@@ -1,4 +1,4 @@
-# movie-prediction-ai
+# client
 
 ## Project setup
 ```
