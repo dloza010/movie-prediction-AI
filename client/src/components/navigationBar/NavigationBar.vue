@@ -30,7 +30,7 @@ export default {
   methods: {
     async fetchMovies(searchTerm) {
       try {
-        const response = await axios.get('http://127.0.0.1:5000/api/movies', {params: {query: searchTerm}});
+        const response = await axios.get('http://localhost:5000/api/movies', {params: {query: searchTerm}});
         console.log(response)
       } catch (error) {
         console.error('Error fetching movies:', error);

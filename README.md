@@ -23,7 +23,8 @@ then run the following commands in a separate terminal to initialize the server:
 
 ```
 cd server
-pip freeze > requirements.txt
+python3 -m venv venv
 source venv/bin/activate
+pip3 install -r requirements.txt
 python run.py
 ```

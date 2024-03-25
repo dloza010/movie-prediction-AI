@@ -5,6 +5,7 @@ server/config.py
 server/venv
 
 # local env files
+server/.env
 .env
 .env.local
 .env.*.local
