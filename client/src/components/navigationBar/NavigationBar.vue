@@ -42,7 +42,7 @@ export default {
 
 <style>
 .navigationBar {
-  background-color: #2c3e50;
+  background-color: transparent;
   color: white;
   padding: 1rem;
   box-shadow: 0 0px 12px 0 #2c3e50;

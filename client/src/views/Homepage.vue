@@ -1,40 +1,43 @@
 <template>
   <div class="home">
-    <h1>Welcome to MyMovieApp</h1>
-    <MovieList :movies="popularMovies" title="Popular Movies" />
+    <FeaturedMovie />
+    <MovieCarousel />
   </div>
 </template>
 
 <script>
-// import MovieList from '@/components/MovieList.vue';
-
+import FeaturedMovie from "../components/movies/FeaturedMovie.vue";
+import MovieCarousel from "../components/movies/MovieCarousel.vue";
 export default {
   name: 'HomePage',
-  // components: {
-  //   MovieList
-  // },
-  data() {
-    return {
-      popularMovies: [] // This would be fetched from the backend API
-    };
-  },
-  mounted() {
-    this.fetchPopularMovies();
-  },
-  methods: {
-    fetchPopularMovies() {
-      // Here you would make an API call to your backend to fetch the popular movies
-      // For example:
-      // axios.get('/api/movies/popular')
-      //     .then(response => this.popularMovies = response.data)
-      //     .catch(error => console.error(error));
-    }
+  components: {
+    FeaturedMovie,
+    MovieCarousel
   }
-};
+}
 </script>
 
 <style>
-.home {
+
+.movie-slider {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.movie-card {
+  margin: 10px;
   padding: 20px;
+  background: #f0f0f0;
+  border-radius: 8px;
+}
+
+.movie-poster {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.tagline {
+  font-style: italic;
 }
 </style>

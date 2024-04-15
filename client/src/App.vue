@@ -18,6 +18,7 @@ export default {
 body, html {
   margin: 0;
   padding: 0;
+  background-color: black;
 }
 
 #app {
