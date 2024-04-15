@@ -1,6 +1,9 @@
 <template>
   <nav class="navigationBar">
     <div class="navigationBar-container">
+      <div class="logo-container">
+        <img :src="logoSvg" alt="Logo" class="logo-svg" />
+      </div>
       <ul class="nav-links">
         <li><router-link to="/">Home</router-link></li>
         <li><SearchBar @queryEmit="fetchMovies" /></li>
@@ -13,15 +16,21 @@
 <script>
 import axios from 'axios';
 import SearchBar from './SearchBar.vue';
+import LogoSvg from '@/assets/logo.svg';
 
 export default {
   components: {
     SearchBar
   },
+  data() {
+    return {
+      logoSvg: LogoSvg
+    }
+  },
   methods: {
     async fetchMovies(searchTerm) {
       try {
-        const response = await axios.get('http://127.0.0.1:5000/api/movies', {params: {query: searchTerm}});
+        const response = await axios.get('http://localhost:5000/api/movies', {params: {query: searchTerm}});
         console.log(response)
       } catch (error) {
         console.error('Error fetching movies:', error);
@@ -33,7 +42,7 @@ export default {
 
 <style>
 .navigationBar {
-  background-color: #2c3e50;
+  background-color: transparent;
   color: white;
   padding: 1rem;
   box-shadow: 0 0px 12px 0 #2c3e50;
@@ -43,6 +52,16 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.logo-container {
+  position: absolute;
+  left: 2.5rem;
+}
+
+.logo-svg {
+  width: 65px;
+  height: auto;
 }
 
 .nav-links {
